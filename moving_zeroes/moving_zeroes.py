@@ -16,11 +16,16 @@ return array
 
 def moving_zeroes(arr):
     # Your code here
-    for num in range(len(arr) - 1):
-        if arr[num] == 0:
-            arr.pop(num)
-            arr.append(0)
-    return arr
+    result = []
+    zero = 0
+    for num in range(len(arr)):
+        if arr[num] != 0:
+            result.append(arr[num])
+        elif arr[num] == 0:
+            zero += 1
+    for item in range(zero):
+        result.append(0)
+    return result
 
 
 if __name__ == '__main__':

@@ -1,6 +1,10 @@
 '''
+U
 Input: a List of integers
-Returns: a List of integers
+Returns: a List of integers (modified)
+
+Each integer is replaced by the product of the other integers in the list 
+
 '''
 def product_of_all_other_numbers(arr):
     # Your code here
