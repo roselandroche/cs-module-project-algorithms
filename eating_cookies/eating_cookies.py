@@ -1,4 +1,3 @@
-from itertools import combinations
 '''
 U
 Input: an integer representing amount of cookies
@@ -16,13 +15,19 @@ How to get there:
     
 '''
 
-def eating_cookies(n):
+def eating_cookies(n, cache):
     # Your code here
     if n == 0:
         return 1
     if n < 0:
         return 0
-    return eating_cookies(n - 1) + eating_cookies(n - 2) + eating_cookies(n - 3)
+
+    if cache[n] > 0:
+        return cache[n]
+    
+    total_possibilities = eating_cookies(n - 1, cache) + eating_cookies(n - 2, cache) + eating_cookies(n - 3, cache)
+    cache[n] = total_possibilities
+    return total_possibilities
 
 if __name__ == "__main__":
     # Use the main function here to test out your implementation
